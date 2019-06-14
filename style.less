@@ -1,0 +1,811 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    display: inline-flex;
+    align-items: flex-start;
+    background: #333333;
+
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: flex-start;
+
+        li {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #333333;
+            cursor: pointer;
+
+        }
+
+        li:hover {
+            background: #2580A2;
+        }
+
+        a {
+            font-weight: 600;
+            font-size: 100%;
+            color: white;
+        }
+    }
+}
+
+// .checkPlayers:checked+.players{
+//     height: 180px;
+// }
+.teamCard:hover .players {
+    z-index: 1;
+    width: 180px;
+
+
+}
+
+.teamCard:hover {
+    transform: scale(1.1);
+
+}
+
+#teamRoster {
+    display: flex;
+    flex-direction: column;
+}
+
+.teamCard {
+    overflow: hidden;
+    padding: 5px;
+    background: #2B3E42;
+    transition-duration: 0.5s;
+    display: inline-block;
+    border-radius: 10px;
+
+    .players {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        width: 0px;
+        transition-duration: 0.5s;
+        position: initial;
+        background: rgba(24, 25, 26, 0.527);
+        z-index: -1;
+        height: 150px;
+        position: absolute;
+        cursor: pointer;
+
+        p {
+            margin: 5px;
+            color: #D5E1DD;
+            font-weight: 500;
+            font-size: 100%;
+
+        }
+    }
+
+    h3 {
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        opacity: 0.9;
+        background: rgba(0, 0, 0, 0.514);
+        border-top: 1px #747E80 solid;
+        border-bottom: 1px #747E80 solid;
+        font-size: 100%;
+        width: 100%;
+    }
+
+    div:last-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #2B3E42;
+
+        >div {
+            background: #2B3E42;
+        }
+
+    }
+
+    i {
+        color: white;
+        font-size: 100%;
+    }
+
+    p {
+        display: inline;
+    }
+
+    table {
+        // width: 100%;
+
+        td {
+            text-align: center;
+        }
+    }
+
+    img {
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        padding: 5%;
+        padding-bottom: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px
+    }
+
+    td {
+        text-align: center;
+        padding: 5px 10px;
+
+        margin: 0;
+        text-transform: capitalize;
+        font-weight: bold;
+        border-bottom: 1px white solid;
+    }
+
+    tr:nth-of-type(1) {
+        color: #D5E1DD;
+    }
+
+    tr:nth-of-type(2) {
+        color: #357EDD;
+    }
+
+    tr:nth-of-type(3) {
+        color: #FF4136;
+    }
+
+}
+
+#area {
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    
+    grid-gap: 30px;
+
+}
+
+main {
+    margin: 40px;
+
+    display: block;
+    align-items: center;
+}
+
+#next,
+#prev {
+    height: 10%;
+    padding: 0px 10px;
+    background: #2B3E42;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.8;
+
+    p {
+        display: block;
+        margin: 0;
+    }
+
+    transition-duration: 0.2s;
+}
+
+#next {
+    position: fixed;
+    top: 40%;
+    right: 10px;
+}
+
+#prev {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+}
+
+#next:hover {
+    opacity: 1;
+}
+
+#prev:hover {
+    opacity: 1;
+}
+
+.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+        margin: 0;
+        font-weight: 700;
+    }
+
+    li {
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    li:first-of-type {
+        color: #808080;
+        border: 2px #808080 solid;
+    }
+
+    li:nth-of-type(2) {
+        color: #808080;
+        border: 2px #808080 solid;
+    }
+
+    li:nth-of-type(3) {
+        color: #357EDD;
+        border: 2px #357EDD solid;
+    }
+
+    li:nth-of-type(4) {
+        color: #357EDD;
+        border: 2px #357EDD solid;
+    }
+
+    li:nth-of-type(5) {
+        color: #FF4136;
+        border: 2px #FF4136 solid;
+    }
+
+    li:nth-of-type(6) {
+        color: #FF4136;
+        border: 2px #FF4136 solid;
+    }
+
+    #search {
+        border: 2px #808080 solid;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+    #search:focus {
+        outline: none;
+
+    }
+}
+
+.noSearch {
+    font-weight: 300;
+    font-size: 24px;
+    padding: 20px 0;
+    border-top: 2px #FF4136 solid;
+    border-bottom: 2px #FF4136 solid;
+    margin-top: 100px;
+
+    p {
+        display: inline;
+    }
+
+    color: #FF3333;
+
+}
+
+// Custom loadgin
+
+// .lds-dual-ring {
+//     display: inline-block;
+//     width: 64px;
+//     height: 64px;
+//     position: fixed;
+//     left: 47%;
+//     top: 47%;
+// }
+
+// .lds-dual-ring:after {
+//     content: " ";
+//     display: block;
+//     width: 46px;
+//     height: 46px;
+//     margin: 1px;
+//     border-radius: 50%;
+//     border: 5px solid #2B3E42;
+//     border-color: #2B3E42 transparent #2B3E42 transparent;
+//     animation: lds-dual-ring 1.2s linear infinite;
+// }
+
+// @keyframes lds-dual-ring {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+#matches {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    >section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >div,>span{
+            margin: 10px;
+        }
+     
+       p{
+           padding: 8px 16px;
+           background: #2E3740;
+           cursor: pointer;
+           color: #ffffff70;
+       }
+    }
+    .scores {
+        text-align: center;
+
+        p {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .Dire {
+        h2 {
+            color: rgb(158, 31, 31);
+            font-size: 40px;
+            margin: 10px;
+        }
+
+    }
+
+    .Radiant {
+        h2 {
+            color: rgb(48, 170, 44);
+            font-size: 40px;
+            margin: 10px;
+
+        }
+    }
+}
+
+#aboutTeam {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    grid-template-columns: 10% 80% 10%;
+    justify-content: center;
+    align-items: center;
+    background: #000000a4;
+    color: #e1e1e1;
+
+    >section {
+        height: 100%;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    >span {
+        background: url(img/sf.jpg) center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+
+        >div {
+            background: rgba(43, 62, 66, 0.884);
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-areas: "div2 div2 div2"
+                "div4 div4 div4"
+                "div4 div4 div4";
+
+            h3 {
+                text-align: center;
+            }
+
+            h4 {
+                display: inline-block;
+            }
+
+            .close {
+                position: absolute;
+
+            }
+
+            #div2 {
+                grid-area: div2;
+            }
+
+            #div4 {
+                grid-area: div4;
+            }
+
+            #lastMatches {
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // flex-direction: column;
+                // flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                grid-gap: 10px;
+                height: 100%;
+
+                .vs {
+                    font-size: 50px;
+
+                }
+
+                .win,
+                .lose {
+                    padding: 10px;
+                }
+
+                .win {
+                    background: rgba(21, 179, 29, 0.664);
+                }
+
+                img {
+                    width: 30px;
+                    height: 25px;
+                }
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto 10px;
+                }
+
+                >div:not(.lds-facebook) {
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    //background: red;
+                    -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+                    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+                    //grid-template-columns: 2fr 1fr 2fr;
+                    transition-duration: 0.2s;
+                    cursor: pointer;
+                }
+
+                >div:hover {
+                    background: rgb(43, 62, 66);
+                }
+            }
+
+
+
+
+
+        }
+    }
+}
+
+.itemBlock {
+    background: black;
+    padding: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.midLoad {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+}
+
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 13px;
+    background: #2B3E42;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+    left: 26px;
+    animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+    left: 45px;
+    animation-delay: 0;
+}
+
+.whiteLoad div {
+    background: rgb(179, 179, 179);
+    position: absolute;
+    left: 45%;
+    top: 45%;
+}
+
+@keyframes lds-facebook {
+    0% {
+        top: 6px;
+        height: 51px;
+    }
+
+    50%,
+    100% {
+        top: 19px;
+        height: 26px;
+    }
+}
+
+
+.itemDescription {
+    background: #2E3740;
+    color: white;
+    max-width: 250px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px;
+    position: absolute;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "image itemanme "
+        "image cost "
+        "skill skill "
+        "desc desc "
+        "stats stats "
+        "cd mana "
+        "lore lore"
+    ;
+
+    .manac {
+        padding: 5px 5px 5px 25px;
+        border-radius: 3px;
+        background: url(img/mana.png) left no-repeat;
+        background-size: 20px;
+        overflow: hidden;
+
+    }
+
+    .cd {
+        padding: 5px 5px 5px 25px;
+        border-radius: 3px;
+        background: url(img/rearm.png) left no-repeat;
+        background-size: 20px;
+    }
+}
+
+.itemDescription span {
+    margin: 5px;
+}
+
+.itemDescription img {
+    grid-area: image;
+
+}
+
+.itemDescription h4 {
+    grid-area: itemanme;
+    margin: 0;
+}
+
+.itemDescription p:first-of-type {
+    grid-area: cost;
+    padding: 10px 0px 10px 50px;
+    background: url(img/gold.png) no-repeat left;
+    background-size: contain;
+    color: gold;
+
+}
+
+.itemDescription>span:nth-of-type(1) {
+    grid-area: skill;
+    padding: 10px;
+    background: rgba(22, 68, 94, 0.719);
+
+    .spanHead {
+        padding: 8px 16px;
+        display: block;
+        border: 1px solid rgba(16, 18, 102, 0.808);
+        background: rgba(22, 51, 94, 0.39);
+        margin: 0;
+    }
+
+
+}
+
+.itemDescription>span:nth-of-type(2) {
+    grid-area: desc;
+    padding: 10px;
+    background: #0f0e0e44;
+
+}
+
+.itemDescription>span:nth-of-type(3) {
+    grid-area: stats;
+    color: white;
+    display: block;
+}
+
+.itemDescription .attribValText {
+    color: rgb(173, 173, 173);
+}
+
+.itemDescription>p:nth-of-type(2) {
+    grid-area: cd;
+}
+
+.itemDescription>p:nth-of-type(3) {
+    grid-area: mana;
+}
+
+.itemDescription>p:nth-of-type(4) {
+    grid-area: lore;
+    background: rgb(31, 37, 43);
+    padding: 5px;
+    border-radius: 2px;
+    color: #ffffff81;
+    font-size: 10px;
+}
+
+.heroPlace {
+    display: flex;
+    flex-direction: column;
+
+    .hero {
+        height: 30px;
+        width: 100%;
+        display: inline-flex;
+
+        background: #2E3740;
+
+        img {
+            height: 30px;
+        }
+
+        p {
+            display: inline-block;
+        }
+    }
+}
+
+.heroPlace {
+    color: white;
+    width: 100%;
+
+    tr {
+        height: 30px;
+        width: 100%;
+
+        td {
+            padding: 5px 40px;
+        }
+
+        background: #2E3740;
+
+
+        img {
+            height: 30px;
+        }
+
+        p {
+            display: block;
+            padding: 2px 20px;
+        }
+
+        .pick {
+            display: inline-block;
+            background: red;
+            width: 100%;
+            height: 5px;
+        }
+
+        .wr {
+            display: inline-block;
+            background: rgb(0, 255, 76);
+            width: 100%;
+            height: 5px;
+        }
+
+        .ban {
+            display: inline-block;
+            background: rgb(14, 14, 14);
+            width: 100%;
+            height: 5px;
+        }
+    }
+}
+
+.map {
+    background: url(img/DotaMap.png);
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+    img {
+        width: 25px;
+    }
+}
+
+.towerDire {
+    padding: 5px;
+    // background: red;
+    //  background: rgba(162, 37, 37, 0.411);
+    display: inline-block;
+    position: absolute;
+}
+
+
+
+.towerDire,.towerRadiant {
+    padding: 5px;
+    // background: red;
+    display: inline-block;
+    position: absolute;
+}
+
+.barrackDire,
+.barrackRadiant {
+    img {
+        width: 20px;
+
+    }
+
+    //background: rgb(78, 3, 3);
+    display: inline-block;
+    position: absolute;
+}
+
+ 
